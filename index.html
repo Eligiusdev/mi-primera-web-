@@ -7,13 +7,14 @@
   <style>
     /* Estilos generales con temática espacial */
     body {
-      background-color: #0b0d17;
+      background-color: #05050a;
       color: #e2e8f0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       padding: 20px;
       max-width: 900px;
       margin: 0 auto;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -30,30 +31,95 @@
 
     /* Caja de apuntes generales */
     .caja-info {
-      background-color: #1e293b;
+      background-color: #121826;
       border-left: 5px solid #a855f7;
       padding: 15px;
       border-radius: 5px;
       margin-bottom: 20px;
+      border: 1px solid #1e293b;
     }
 
-    /* Contenedor interactivo para jugar con CSS */
-    .galaxia-interactiva {
-      background: radial-gradient(circle, #3b82f6 0%, #1e1b4b 70%, #0b0d17 100%);
-      width: 200px;
-      height: 200px;
+    /* CONTENEDOR DE LA GALAXIA ESPIRAL PROFESIONAL */
+    .escena-galaxia {
+      perspective: 1000px; /* Genera profundidad 3D */
+      width: 100%;
+      height: 380px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin: 20px auto;
-      border-radius: 50%;
-      box-shadow: 0 0 30px #3b82f6;
-      transition: all 0.5s ease;
-      cursor: pointer;
+      position: relative;
     }
 
-    /* Efecto al pasar el mouse por encima */
-    .galaxia-interactiva:hover {
-      transform: rotate(180deg) scale(1.1);
-      box-shadow: 0 0 50px #f472b6;
-      background: radial-gradient(circle, #f472b6 0%, #581c87 70%, #0b0d17 100%);
+    .galaxia-interactiva {
+      position: relative;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      transform: rotateX(55deg) rotateY(-15deg); /* Inclinación realista en el espacio */
+      transform-style: preserve-3d;
+      cursor: pointer;
+      transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Núcleo galáctico súper brillante (Efecto de acumulación de estrellas) */
+    .galaxia-interactiva::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 0%, #ffeebb 30%, #ff9d00 70%, transparent 100%);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 45px 25px rgba(255, 235, 180, 0.8),
+                  0 0 90px 50px rgba(147, 197, 253, 0.4);
+      z-index: 10;
+    }
+
+    /* Brazos Espirales simulados con miles de partículas densas mediante box-shadow múltiple */
+    .galaxia-interactiva::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      background: #ffffff;
+      /* Mapeo matemático de brazos espirales (Estrellas individuales y nubes de polvo azul/rosa) */
+      box-shadow: 
+        /* Brazo 1 (Espiral interna hacia externa) */
+        10px 8px 4px #fff, 22px 25px 8px #93c5fd, 30px 45px 12px #a855f7, 25px 70px 15px #3b82f6, 5px 95px 18px #2563eb, -25px 115px 22px #1d4ed8, -60px 125px 25px #1e1b4b,
+        /* Brazo 1 extendido */
+        -100px 115px 28px #0f172a, -135px 90px 30px #020617, -160px 50px 35px transparent,
+        
+        /* Brazo 2 (Lado opuesto de la Vía Láctea) */
+        -10px -8px 4px #fff, -22px -25px 8px #f472b6, -30px -45px 12px #be185d, -25px -70px 15px #6366f1, -5px -95px 18px #4f46e5, 25px -115px 22px #4338ca, 60px -125px 25px #312e81,
+        /* Brazo 2 extendido */
+        100px -115px 28px #1e1b4b, 135px -90px 30px #0f172a, 160px -50px 35px transparent,
+
+        /* Polvo estelar disperso e interestelar */
+        45px -15px 14px #3b82f6, -45px 15px 14px #f472b6, 80px 20px 20px #581c87, -80px -20px 20px #1e3a8a,
+        120px 40px 25px rgba(59, 130, 246, 0.2), -120px -40px 25px rgba(244, 114, 182, 0.2);
+
+      animation: rotacionGalactica 40s linear infinite; /* Giro extremadamente lento y majestuoso */
+    }
+
+    /* Animación de rotación constante */
+    @keyframes rotacionGalactica {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    /* Efecto interactivo al pasar el cursor sobre la escena */
+    .escena-galaxia:hover .galaxia-interactiva {
+      transform: rotateX(35deg) rotateY(-5deg) scale(1.05); /* Cambia el ángulo de visión espacial */
     }
 
     /* Grid para los tipos de galaxias */
@@ -65,10 +131,11 @@
     }
 
     .tarjeta {
-      background-color: #111827;
-      border: 1px solid #374151;
+      background-color: #0b0f19;
+      border: 1px solid #1e293b;
       padding: 15px;
       border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
     }
 
     .tarjeta h3 {
@@ -86,3 +153,39 @@
   </style>
 </head>
 <body>
+    <h1>Apuntes del Universo: Las Galaxias</h1>
+    
+    <div class="caja-info">
+        <p>Las galaxias son enormes sistemas de estrellas, gas, polvo y materia oscura unidos por la gravedad. Existen diferentes tipos de galaxias, cada una con características únicas.</p>
+    </div>
+    
+    <!-- Nueva estructura de escena para soportar la galaxia 3D -->
+    <div class="escena-galaxia">
+        <div class="galaxia-interactiva"></div>
+    </div>
+    
+    <h2>Tipos de Galaxias</h2>
+    <div class="tipos-grid">
+        <div class="tarjeta">
+        <h3>Galaxias Espirales</h3>
+        <p>Estas galaxias tienen brazos en espiral que se extienden desde un núcleo central. Ejemplo: La Vía Láctea.</p>
+        </div>
+        <div class="tarjeta">
+        <h3>Galaxias Elípticas</h3>
+        <p>Tienen una forma más redonda u ovalada y carecen de brazos espirales. Son más antiguas y contienen menos gas y polvo.</p>
+        </div>
+        <div class="tarjeta">
+        <h3>Galaxias Irregulares</h3>
+        <p>No tienen una forma definida y suelen ser el resultado de interacciones gravitacionales con otras galaxias.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Script para agregar interactividad a la galaxia
+        const galaxia = document.querySelector('.galaxia-interactiva');
+        galaxia.addEventListener('click', () => {
+          alert('🌌 Viajando hacia el núcleo de la Vía Láctea... Contiene miles de millones de estrellas coordinadas por gravedad.');
+        });
+    </script>
+</body>
+</html>
