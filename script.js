@@ -1,73 +1,76 @@
 // ==========================================================================
-// MOTOR DE INTERACTIVIDAD ASTRONÓMICA PARA EL PROYECTO UNIVERSO
+// MOTOR HOLOGRÁFICO DE ZOOM Y CONTROL GRAVITATORIO (ESTILO JARVIS)
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  const universo = document.querySelector('.universo-3d');
-  const nucleo = document.querySelector('.nucleo');
+  const galaxia = document.getElementById('galaxia-contenedor');
   const consola = document.getElementById('consola-espacial');
   const tarjetas = document.querySelectorAll('.tarjeta');
   const capaPrincipal = document.querySelector('.capa-estrellas.principales');
   const capaExterna = document.querySelector('.capa-estrellas.externas');
 
-  // 1. Evento de exploración al hacer Click en la Galaxia
-  universo.addEventListener('click', () => {
-    // Generar datos simulados aleatorios del espacio profundo
-    const aniosLuz = Math.floor(Math.random() * (25000 - 1000 + 1)) + 1000;
-    const estrellasDetectadas = (Math.random() * (4.5 - 1.2) + 1.2).toFixed(2);
+  // Parámetros físicos por defecto
+  let scaleVal = 1;
+  const minScale = 0.5;
+  const maxScale = 2.5;
+
+  // 1. CONTROL DE ZOOM MATEMÁTICO MEDIANTE LA RUEDA DEL RATÓN (SCROLL)
+  const escena = document.querySelector('.escena-galaxia');
+  
+  escena.addEventListener('wheel', (e) => {
+    e.preventDefault(); // Previene que la página web entera suba o baje
+
+    // Detectar la dirección del scroll para sumar o restar escala
+    if (e.deltaY < 0) {
+      scaleVal += 0.12; // Zoom In
+    } else {
+      scaleVal -= 0.12; // Zoom Out
+    }
+
+    // Restringir el zoom dentro de límites limpios para evitar deformaciones rotacionales
+    scaleVal = Math.max(minScale, Math.min(maxScale, scaleVal));
+
+    // Aplicar la matriz de transformación conservando la inclinación cinemática de Jarvis
+    galaxia.style.transform = `rotateX(65deg) rotateY(-15deg) scale(${scaleVal})`;
+
+    // Imprimir porcentaje puro de magnificación en el HUD
+    const porcentajeZoom = Math.floor(scaleVal * 100);
+    consola.innerHTML = `🔍 <strong>Ajuste Óptico Jarvis:</strong> Zoom telescópico al [ ${porcentajeZoom}% ]. Campo de partículas estabilizado.`;
+  });
+
+  // 2. EFECTO PULSO GRAVITATORIO (CLICK)
+  galaxia.addEventListener('click', () => {
+    consola.innerHTML = `⚡ <strong>Pulso Electromagnético Stark:</strong> Generando aceleración cuántica transitoria en las estrellas periféricas.`;
     
-    // Imprimir reporte en nuestra consola en pantalla
-    consola.innerHTML = `☄️ <strong>Escaner de Núcleo:</strong> ¡Sagitario A* Activo! Distancia al punto de impacto: ~${aniosLuz} años luz. Densidad calculada: ${estrellasDetectadas}B de estrellas.`;
-    
-    // Efecto visual instantáneo: Sobrecarga lumínica del núcleo
-    nucleo.style.boxShadow = `
-      0 0 50px 30px #ffffff,
-      0 0 90px 45px #a855f7,
-      0 0 200px 100px #3b82f6
-    `;
-    
-    // Activar clase CSS temporal para distorsionar la galaxia
-    universo.classList.add('hipervelocidad');
-    
-    // Restaurar los parámetros físicos a los 600ms
+    // Sobrecarga temporal de la rotación acelerando las capas por código
+    capaPrincipal.style.animationDuration = '3s';
+    capaExterna.style.animationDuration = '6s';
+
+    // Regresar al flujo gravitatorio normal tras 1.5 segundos
     setTimeout(() => {
-      nucleo.style.boxShadow = '';
-      universo.classList.remove('hipervelocidad');
-    }, 600);
+      capaPrincipal.style.animationDuration = '20s';
+      capaExterna.style.animationDuration = '40s';
+      consola.innerText = `📡 Sistema de Monitoreo: Órbitas estabilizadas a velocidad angular normalizada.`;
+    }, 1500);
   });
 
-  // 2. Evento dinámico al pasar el cursor (Mousemove) sobre el plano galáctico
-  universo.addEventListener('mousemove', (e) => {
-    // Calcular coordenadas relativas para simular distorsión por gravedad
-    const rect = universo.getBoundingClientRect();
-    const x = Math.floor(e.clientX - rect.left);
-    const y = Math.floor(e.clientY - rect.top);
-    
-    consola.innerText = `🌌 Leyendo cuadrante espacial X: ${x}u | Y: ${y}u. Fuerza de atracción gravitatoria estable.`;
-  });
-
-  // Limpiar la consola cuando el mouse sale de la galaxia
-  universo.addEventListener('mouseleave', () => {
-    consola.innerText = "📡 Sistema de Monitoreo: Buscando anomalías cósmicas...";
-  });
-
-  // 3. Evento para las Tarjetas del Grid Inferior
+  // 3. INTERACTIVIDAD CON EL GRID DE CONTROL INFERIOR
   tarjetas.forEach(tarjeta => {
     tarjeta.addEventListener('click', () => {
       const tipoGalaxia = tarjeta.getAttribute('data-tipo');
       
       if (tipoGalaxia === 'espiral') {
-        consola.innerHTML = "🌀 <strong>Modo Espiral:</strong> Velocidad de rotación normalizada en los brazos dinámicos.";
-        capaPrincipal.style.animationDuration = '25s';
-        capaExterna.style.animationDuration = '45s';
+        consola.innerHTML = "🌀 <strong>Modo Espiral:</strong> Vía Láctea en estado puro. Estrellas blancas masivas alineadas.";
+        capaPrincipal.style.animationDuration = '20s';
+        capaExterna.style.animationDuration = '40s';
       } else if (tipoGalaxia === 'eliptica') {
-        consola.innerHTML = "🛑 <strong>Modo Elíptico:</strong> Colapsando brazos. Fricción alta. Las órbitas se ralentizan en un 300%.";
-        capaPrincipal.style.animationDuration = '90s';
-        capaExterna.style.animationDuration = '150s';
+        consola.innerHTML = "🛑 <strong>Modo Elíptico:</strong> Colapsando brazos del sistema. Compresión masiva. Rotación ralentizada.";
+        capaPrincipal.style.animationDuration = '80s';
+        capaExterna.style.animationDuration = '130s';
       } else if (tipoGalaxia === 'irregular') {
-        consola.innerHTML = "⚡ <strong>Modo Irregular:</strong> Caos gravitacional detectado. Velocidad hiper-acelerada por colisión.";
-        capaPrincipal.style.animationDuration = '5s';
-        capaExterna.style.animationDuration = '10s';
+        consola.innerHTML = "💥 <strong>Modo Irregular:</strong> Ruptura de filamentos. Caos en la matriz estelar de Jarvis.";
+        capaPrincipal.style.animationDuration = '4s';
+        capaExterna.style.animationDuration = '8s';
       }
     });
   });
