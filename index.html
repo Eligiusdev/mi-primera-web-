@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio y perfil profesional de Stiven Builes, desarrollador web en formación en Medellín, Colombia.">
+  <meta name="theme-color" content="#0b1020">
+  <title>Stiven Builes | Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: "#0b1020",
+            panel: "#121a2e",
+            mint: "#7ce8c8",
+            muted: "#b5c0d8"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-canvas text-slate-100 antialiased selection:bg-mint selection:text-slate-950">
+  <a class="sr-only z-50 rounded-lg bg-mint px-4 py-2 font-semibold text-slate-950 focus:not-sr-only focus:fixed focus:left-4 focus:top-4" href="#contenido">
+    Saltar al contenido
+  </a>
+
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-canvas/90 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <a class="w-fit text-lg font-black tracking-widest text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-mint" href="#inicio" aria-label="Stiven Builes, inicio">
+        STIVEN<span class="text-mint">.</span>
+      </a>
+      <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted" aria-label="Navegación principal">
+        <a class="transition-colors hover:text-mint focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-mint" href="#perfil">Perfil</a>
+        <a class="transition-colors hover:text-mint focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-mint" href="#habilidades">Habilidades</a>
+        <a class="transition-colors hover:text-mint focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-mint" href="#experiencia">Experiencia</a>
+        <a class="transition-colors hover:text-mint focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-mint" href="#formacion">Formación</a>
+        <a class="transition-colors hover:text-mint focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-mint" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="mx-auto max-w-6xl px-5 sm:px-8">
+    <section id="inicio" class="grid min-h-[75vh] scroll-mt-24 items-center gap-12 py-16 md:grid-cols-[1.3fr_0.7fr] md:py-24">
+      <div>
+        <p class="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-mint">
+          <span class="h-px w-8 bg-mint" aria-hidden="true"></span>
+          Perfil profesional · Tecnología
+        </p>
+        <h1 class="text-6xl font-black leading-[0.95] tracking-[-0.06em] sm:text-7xl md:text-8xl">
+          STIVEN<br><span class="text-mint">BUILES.</span>
+        </h1>
+        <p class="mt-7 max-w-2xl text-lg leading-8 text-muted">
+          Profesional en transición hacia el desarrollo de software, con experiencia en atención al cliente
+          y formación práctica en desarrollo web. Combino comunicación, disciplina y pensamiento analítico
+          con una mentalidad de aprendizaje continuo.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="inline-flex min-h-12 items-center justify-center rounded-xl bg-mint px-5 py-3 font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-emerald-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mint" href="#contacto">Hablemos</a>
+          <a class="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:border-mint/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mint" href="#experiencia">Ver experiencia</a>
+        </div>
+      </div>
+
+      <aside class="rounded-3xl border border-white/10 bg-gradient-to-br from-mint/10 to-indigo-400/10 p-6 shadow-2xl shadow-black/20 sm:p-8" aria-label="Resumen profesional">
+        <div class="mb-6 grid h-16 w-16 place-items-center rounded-2xl bg-mint text-2xl font-black text-slate-950">SB</div>
+        <h2 class="text-xl font-bold">Desarrollador web en formación</h2>
+        <p class="mt-1 text-muted">En formación tecnológica · Riwi</p>
+        <dl class="mt-7 grid grid-cols-2 gap-3">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <dt class="text-sm text-muted">Experiencia laboral</dt><dd class="mt-1 text-xl font-bold text-mint">4 etapas</dd>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <dt class="text-sm text-muted">Desarrollo web</dt><dd class="mt-1 text-xl font-bold text-mint">HTML</dd>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <dt class="text-sm text-muted">JavaScript</dt><dd class="mt-1 text-xl font-bold text-mint">En curso</dd>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <dt class="text-sm text-muted">Inglés</dt><dd class="mt-1 text-xl font-bold text-mint">B1</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section id="perfil" class="scroll-mt-24 py-10">
+      <div class="mb-5">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-mint">01 / Quién soy</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Perfil profesional</h2>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-panel p-6 leading-8 text-muted sm:p-8">
+        Actualmente estoy fortaleciendo mis competencias en desarrollo de software mediante formación intensiva y práctica. Me interesa construir soluciones útiles, comprender cómo funcionan desde su estructura y mejorar mi capacidad para resolver problemas de manera autónoma. Mi trayectoria incluye atención al cliente por canales digitales, logística de distribución y seguridad. Estas experiencias me han permitido desarrollar comunicación efectiva, organización, resolución de problemas, adaptación y orientación al servicio.
+      </div>
+    </section>
+
+    <section id="habilidades" class="scroll-mt-24 py-10">
+      <div class="mb-5">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-mint">02 / Lo que aporto</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Habilidades y enfoque</h2>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2">
+        <article class="rounded-2xl border border-white/10 bg-panel p-6 transition hover:-translate-y-1 hover:border-mint/30 sm:p-7">
+          <h3 class="text-lg font-bold">Desarrollo y tecnología</h3>
+          <p class="mt-2 text-muted">Conocimientos y áreas que estoy desarrollando actualmente.</p>
+          <ul class="mt-5 flex flex-wrap gap-2" aria-label="Habilidades de desarrollo">
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">HTML</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">JavaScript · fundamentos</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Lógica de programación</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Estructura web</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Uso responsable de IA</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Herramientas ofimáticas</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Excel y Word</li>
+          </ul>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-panel p-6 transition hover:-translate-y-1 hover:border-mint/30 sm:p-7">
+          <h3 class="text-lg font-bold">Habilidades profesionales</h3>
+          <p class="mt-2 text-muted">Competencias construidas en entornos de trabajo y aprendizaje.</p>
+          <ul class="mt-5 flex flex-wrap gap-2" aria-label="Habilidades profesionales">
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Atención al cliente</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Comunicación</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Trabajo en equipo</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Adaptabilidad</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Disciplina</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Aprendizaje autónomo</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Gestión de PQR</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Logística y distribución</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Atención por WhatsApp</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiencia" class="scroll-mt-24 py-10">
+      <div class="mb-5">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-mint">03 / Trayectoria</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Experiencia</h2>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <article class="rounded-2xl border border-white/10 bg-panel p-6 transition hover:-translate-y-1 hover:border-mint/30">
+          <p class="text-sm font-bold text-mint">Piñatería · Centro de Medellín · 2023</p>
+          <h3 class="mt-2 text-lg font-bold">Auxiliar de seguridad</h3>
+          <p class="mt-2 leading-7 text-muted">Control de ingreso y salida de clientes, prevención de pérdidas y apoyo al orden y la seguridad del establecimiento.</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-panel p-6 transition hover:-translate-y-1 hover:border-mint/30">
+          <p class="text-sm font-bold text-mint">Chiper · 2024</p>
+          <h3 class="mt-2 text-lg font-bold">Repartidor logístico</h3>
+          <p class="mt-2 leading-7 text-muted">Entrega de pedidos en la zona oriental de Medellín, organización de recorridos, cumplimiento de tiempos y atención a usuarios.</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-panel p-6 transition hover:-translate-y-1 hover:border-mint/30">
+          <p class="text-sm font-bold text-mint">APLus S.A. · 2025</p>
+          <h3 class="mt-2 text-lg font-bold">Repartidor logístico</h3>
+          <p class="mt-2 leading-7 text-muted">Distribución de pedidos en el occidente de Medellín, organización y cumplimiento de rutas, gestión de tiempos y atención al cliente durante las entregas.</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-panel p-6 transition hover:-translate-y-1 hover:border-mint/30">
+          <p class="text-sm font-bold text-mint">BRM S.A.S. · Agosto 2025 – Actualidad</p>
+          <h3 class="mt-2 text-lg font-bold">Asesor Front | Servicio al cliente</h3>
+          <p class="mt-2 leading-7 text-muted">Atención a clientes por WhatsApp y canales digitales; gestión de PQR, soporte, ventas, retención y fidelización. Trabajo orientado al cumplimiento de indicadores de calidad y servicio.</p>
+        </article>
+        <article class="rounded-2xl border border-indigo-300/25 bg-gradient-to-br from-indigo-400/10 to-panel p-6 transition hover:-translate-y-1 sm:col-span-2">
+          <p class="text-sm font-bold text-mint">Actualidad</p>
+          <h3 class="mt-2 text-lg font-bold">Formación en desarrollo de software · Riwi</h3>
+          <p class="mt-2 leading-7 text-muted">Formación práctica en desarrollo web, fundamentos de programación y resolución de problemas. Actualmente fortalezco HTML, JavaScript y pensamiento lógico mediante ejercicios y proyectos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="formacion" class="scroll-mt-24 py-10">
+      <div class="mb-5">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-mint">04 / Preparación</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Formación y aprendizaje</h2>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2">
+        <article class="rounded-2xl border border-white/10 bg-panel p-6 sm:p-7">
+          <h3 class="text-lg font-bold">Riwi · Desarrollo de software</h3>
+          <p class="mt-2 leading-7 text-muted">Formación intensiva en desarrollo de software, con práctica en HTML, fundamentos de JavaScript, lógica de programación y resolución de problemas.</p>
+        </article>
+        <article class="rounded-2xl border border-white/10 bg-panel p-6 sm:p-7">
+          <h3 class="text-lg font-bold">Instituto Tecnológico Metropolitano (ITM)</h3>
+          <p class="mt-2 leading-7 text-muted">Estudiante universitario. Formación académica en curso.</p>
+          <ul class="mt-4 flex flex-wrap gap-2" aria-label="Idiomas">
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Inglés B1</li>
+            <li class="rounded-full border border-mint/20 bg-mint/10 px-3 py-1.5 text-sm text-emerald-100">Español nativo</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="py-10">
+      <div class="mb-5">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-mint">05 / Mi enfoque</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Aprender construyendo</h2>
+      </div>
+      <p class="rounded-2xl border border-indigo-300/20 bg-indigo-400/5 p-6 leading-8 text-muted sm:p-8">
+        Mi objetivo es crecer como desarrollador a través de la práctica: entender el problema, plantear una solución, escribir código, probarlo y corregirlo. Utilizo la inteligencia artificial como herramienta de apoyo, sin reemplazar el razonamiento ni el aprendizaje propio.
+      </p>
+    </section>
+
+    <section id="contacto" class="scroll-mt-24 py-10">
+      <div class="mb-5">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-mint">06 / Próximo paso</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Conectemos</h2>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-panel p-6 sm:p-8">
+        <p class="max-w-3xl leading-8 text-muted">Estoy abierto a oportunidades de aprendizaje, proyectos y posiciones de nivel inicial donde pueda aportar mi experiencia de servicio mientras sigo creciendo en tecnología.</p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a class="inline-flex min-h-12 items-center justify-center rounded-xl bg-mint px-5 py-3 font-bold text-slate-950 transition hover:bg-emerald-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mint" href="mailto:eligiusdev@gmail.com">Enviar correo</a>
+          <a class="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/15 px-5 py-3 font-bold transition hover:border-mint/50 hover:text-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mint" href="https://wa.me/573104082991" target="_blank" rel="noopener noreferrer">WhatsApp · 310 408 2991 <span class="sr-only">(abre en una pestaña nueva)</span></a>
+          <a class="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/15 px-5 py-3 font-bold transition hover:border-mint/50 hover:text-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mint" href="https://github.com/eligiusdev" target="_blank" rel="noopener noreferrer">GitHub <span class="sr-only">(abre en una pestaña nueva)</span></a>
+        </div>
+        <p class="mt-5 text-sm text-muted">Medellín, Colombia · eligiusdev@gmail.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-12 border-t border-white/10 bg-white/[0.02]">
+    <div class="mx-auto max-w-6xl px-5 py-7 text-sm text-muted sm:px-8">
+      © <span id="year">2026</span> Stiven Builes · Perfil profesional
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
